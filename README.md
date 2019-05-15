@@ -3,7 +3,7 @@ A basic neural network implemented using numpy to predict the number of rectangl
 
 </a>
 <p align="center">
-    <img src="https://github.com/annabond1001/count-rects-np/blob/master/demo/figure_1.png?raw=true", width="500">
+    <img src="https://github.com/annabond1001/count-rects-np/blob/master/demo/figure_1.png?raw=true", width="650">
 </p>
 
 A neural network with 3 fully-connected hidden layers is trained to predict the number of overlapping rectangles in a single channel image with just filled-rectangles in them.
