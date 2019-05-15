@@ -1,0 +1,39 @@
+\\
+x \in  R^{30\times30} \rightarrow input\\
+y \in R \rightarrow ground~truth\\ \\
+
+\hat y ~= Net(x)\\ \\
+l1 = \sigma (x \times w1) + b1\\
+l2 = \sigma (l1 \times w2) + b2\\
+l3 = \sigma (l2 \times w3) + b3\\
+\hat y ~=  (l3 \times w4) + b4\\
+where,\\
+w1, w2 ,w3, w4 \rightarrow Weight~Matrices\\
+b1, b2 ,b3, b4 \rightarrow Bias-Vectors\\
+
+\\
+loss = (y-\hat y)^2 \\ \\
+
+\partial loss/\partial \hat y = 2\times(y-\hat y) \\ \\
+\partial loss/\partial w4 = (\partial loss/\partial \hat y)\times(\partial \hat y/\partial w4) \\
+~\hspace{66} = l3^T \times (\partial loss/\partial \hat y)\\
+
+\partial loss/\partial b4 = (\partial loss/\partial \hat y)\times(\partial \hat y/\partial b4) \\
+~\hspace{66} = (\partial loss/\partial \hat y)\\ \\
+
+
+\partial loss/\partial w3 = (\partial loss/\partial \hat y)\times(\partial \hat y/\partial l3) \times (\partial l3/\partial w3)\\
+~\hspace{66} = l2^T \times (\partial loss/\partial \hat y) \times w4^T \times \sigma' (l3) \\
+
+\partial loss/\partial b3 ~= (\partial loss/\partial \hat y)\times(\partial \hat y/\partial l3) \times (\partial l3/\partial b3)\\
+~\hspace{66} = (\partial loss/\partial \hat y) \times (\partial \hat y / \partial l3) \times \sigma' (l3) \\ \\
+
+\\
+\partial loss/\partial w2 = (\partial loss/\partial \hat y)\times(\partial \hat y/\partial l3) \times(\partial l3/\partial l2) \times (\partial l2/\partial w2)\\
+\partial loss/\partial b2 ~= (\partial loss/\partial \hat y)\times(\partial \hat y/\partial l3) \times(\partial l3/\partial l2) \times (\partial l2/\partial b2)\\ \\
+
+
+\\
+\partial loss/\partial w1 = (\partial loss/\partial \hat y)\times(\partial \hat y/\partial l3) \times(\partial l3/\partial l2) \times(\partial l2/\partial l1) \times (\partial l1/\partial w1)\\
+\partial loss/\partial b1 = (\partial loss/\partial \hat y)\times(\partial \hat y/\partial l3) \times(\partial l3/\partial l2) \times(\partial l2/\partial l1) \times (\partial l1/\partial b1)\\
+
