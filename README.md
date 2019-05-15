@@ -1,4 +1,4 @@
-# count-rects-numpy_nn
+# count-rectanges-numpy
 A basic neural network implemented using numpy to predict the number of rectangles in an image. 
 
 </a>
