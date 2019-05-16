@@ -29,7 +29,7 @@ def generate_sample(n_rect):
 canvas, y = generate_sample(1)
 #nn = NeuralNetwork(canvas.size, 1)
 #loading model
-with open("model.pkl") as f:
+with open("models/model.pkl") as f:
 	nn = pickle.load(f)
 n_iter = 10
 losses = []

@@ -31,7 +31,7 @@ def generate_sample(n_rect):
 canvas, y = generate_sample(1)
 nn = NeuralNetwork(canvas.size, 1)
 nn.set_learning_rate(0.01)
-n_iter = 100000
+n_iter = 30000
 losses = []
 for i in range(n_iter):
 	n_rect	= randint(0, MAX_N_RECT)
@@ -49,7 +49,7 @@ with open("models/model.pkl", "wb") as output:
 	pickle.dump(nn, output, pickle.HIGHEST_PROTOCOL)
 
 #loading model
-with open("model.pkl") as f:
+with open("models/model.pkl") as f:
 	nn2 = pickle.load(f)
 
 canvas, y = generate_sample(8)
